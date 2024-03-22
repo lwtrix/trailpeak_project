@@ -1,0 +1,135 @@
+
+/* GENERAL STYLES  */
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+/* NAVIGATION STYLES */
+
+.navigation-container {
+  width: 100vw;
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  margin: 0 auto;
+  padding: 12px 24px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  color: white;
+  font-family: 'Akshar', 'Oswald', sans-serif;
+}
+
+nav .logo-container {
+  width: 268px;
+  height: auto;
+  cursor: pointer;
+}
+
+nav .logo-container img {
+  width: 100%;
+}
+
+nav .nav-links {
+  display: flex;
+  position: relative;
+}
+
+nav .nav-links .nav-link {
+  margin: 0 42px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  cursor: pointer;
+  list-style: none;
+  padding: 42px 0;
+}
+
+nav .nav-links .nav-link:hover,
+nav .nav-links .nav-link:hover > a {
+  color: #2ad4cb;
+  transition: .2s;
+}
+
+nav .nav-links .nav-link a {
+  text-decoration: none;
+  color: white;
+  padding: 32px 0;
+}
+
+nav .dropdown-link .dropdown-link-container {
+  display: flex;
+  align-items: center;
+}
+
+nav .dropdown-link .dropdown-link-container .arrow-icon {
+  margin-left: 8px;
+}
+
+nav .dropdown-link:hover path {
+  fill: #2ad4cb;
+}
+
+nav .dropdown-container {
+  opacity: 0;
+  transform: scale(0);
+  z-index: 100;
+  position: absolute;
+  top: 112px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #2d2d2d;
+  border-bottom: none;
+  transition: opacity .4s ease;
+}
+
+nav .nav-links .dropdown-link:hover > .dropdown-container {
+  opacity: 100%;
+  transform: scale(100%);
+}
+
+nav .dropdown-container:hover {
+  display: block;
+}
+
+nav .dropdown-container .dropdown-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav .dropdown-container .dropdown-links .nav-link {
+  padding: 18px 72px;
+  margin: 0;
+  border-bottom: 1px solid #2d2d2d;
+  text-align: center;
+  transition: background-color .2s ease;
+  font-size: 20px;
+}
+
+nav .dropdown-container .dropdown-links .nav-link:hover {
+  background-color: #000000;
+}
+
+nav .dropdown-container .dropdown-links .nav-link:hover > a{
+  color: white;
+}
+
+nav .dropdown-container .dropdown-links a {
+  color: black;
+}

@@ -1,0 +1,40 @@
+.trail-search-section {
+  width: 100%;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.164);
+  display: flex;
+  align-items: center;
+}
+
+.trail-search-section .form-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.trail-search-section .form-container .heading {
+  font-size: 68px;
+}
+
+.trail-search-section .form-container .text {
+  font-size: 18px;
+}
+
+.trail-search-section .form-container .search-field {
+  padding: 12px 24px;
+  width: 35%;
+  display: block;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+.trail-search-section .form-container .submit-btn {
+  margin-top: 18px;
+  padding: 14px 38px;
+  width: 17.5%;
+  outline: 0;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  font-size: 18px;
+  border: none;
+}

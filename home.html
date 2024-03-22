@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Akshar:wght@100;300;400;500;600;700&family=Oswald:wght@200..700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <title>TrailPeak</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/home.css" />
+</head>
+
+<body>
+
+  <div class="navigation-container">
+    <nav>
+      <div class="logo-container">
+        <a href="home.html">
+          <img src="./images/trailpeaklogo.png" alt="Trail Peak Logo" />
+        </a>
+      </div>
+      <div class="nav-links">
+        <li class="nav-link">
+          <a href="./home.html">Home</a>
+        </li>
+        <li class="nav-link">
+          <a href="./explore.html">Explore</a>
+        </li>
+        <li class="nav-link dropdown-link">
+          <div class="dropdown-link-container">
+            <span>More</span>
+            <svg class="arrow-icon" width="20px" height="20px" viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill="#fff"
+                d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z" />
+            </svg>
+          </div>
+          <div class="dropdown-container">
+            <ul class="dropdown-links">
+              <li class="nav-link">
+                <a href="#">Safety</a>
+              </li>
+              <li class="nav-link">
+                <a href="#">Etiquette</a>
+              </li>
+              <li class="nav-link">
+                <a href="#">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <div>
+    </nav>
+  </div>
+
+  <section class="carousel">
+
+    <div class="carousel-container">
+      <div class="carousel-text-container">
+        <div class="content-container">
+          <h1 class="title">Explore Beyond</h1>
+          <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsum quas reprehenderit
+            quidem voluptates voluptatem quaerat a eius cumque nihil itaque repellendus nisi. </p>
+          <button class="btn">Read More</button>
+        </div>
+      </div>
+
+      <div class="carousel-slide" data-active>
+        <img src="./images/carousel-1.jpg" alt="MTB Image 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="./images/carousel-2.jpg" alt="MTB Image 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="./images/carousel-3.jpg" alt="MTB Image 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="./images/carousel-4.jpg" alt="MTB Image 1">
+      </div>
+    </div>
+  </section>
+
+  <section class="trail-search">
+    <div class="form-container">
+      <h2 class="form-title">Discover Trails</h2>
+      <p class="text">Search trails in your local area</p>
+      <input type="text" id="search-field" class="search-field" placeholder="enter a city, state.." />
+      <button onclick="handleSearch()">Search</button>
+    </div>
+  </section>
+
+  <script defer>
+    let slides = document.getElementsByClassName("carousel-slide");
+
+    const showSlides = () => {
+
+      const currentSlide = document.querySelector('[data-active]')
+
+      let nextSlide = [...slides].indexOf(currentSlide) + 1
+
+      if (nextSlide >= slides.length) { nextSlide = 0 }
+      if (nextSlide < 0) { nextSlide = slides.length - 1 }
+
+      delete currentSlide.dataset.active
+      slides[nextSlide].dataset.active = true
+    }
+
+    const loopSlides = () => {
+      showSlides()
+    }
+
+    setInterval(loopSlides, 10000)
+
+  </script>
+
+  <script>
+    const searchInput = document.querySelector('#search-field')
+
+
+    const handleSearch = async () => {
+      const coords = await fetchCoordinates(searchInput.value)
+      const results = await fetchTrails(coords.lat, coords.lon)  
+
+      console.log(results)
+    }
+
+    const fetchCoordinates = async (address) => {
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': 'c6cedd9129msh0e8dc07501b8cb0p17b8a6jsn5e9de941d591',
+          'X-RapidAPI-Host': 'address-from-to-latitude-longitude.p.rapidapi.com'
+        }
+      };
+
+      const url = `https://address-from-to-latitude-longitude.p.rapidapi.com/geolocationapi?address=${address}`;
+
+      try {
+        const res = await fetch(url, options)
+        const { Results } = await res.json()
+
+        return { lat: Results[0].latitude, lon: Results[0].longitude }
+    
+      } catch (error) {
+        console.log(error)
+        return {}
+      }
+    }
+
+    const fetchTrails = async (lat, lon, radius = 50) => {
+      const url = `https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=${lat}&lon=${lon}&radius=${radius}`;
+
+      const config = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': 'c6cedd9129msh0e8dc07501b8cb0p17b8a6jsn5e9de941d591',
+          'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+        }
+      };
+
+      try {
+        const res = await fetch(url, config)
+        const data = await res.json()
+
+        return data
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  </script>
+</body>
+
+</html>
