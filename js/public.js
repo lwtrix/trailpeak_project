@@ -24,7 +24,7 @@ const renderTrailResults = (data, inputValue) => {
         <div class="details-container">
           <span class="location">${data[i].city}, ${data[i].country}</span>
           <h3 class="name">${data[i].name}</h3>
-          <p class="description">${data[i].description}</p>
+          <p class="description">${data[i].description.toString()}</p>
           <span class="difficulty">${
             data[i].difficulty ? data[i].difficulty : 'Unknown'
           }</span>
@@ -42,14 +42,18 @@ const handleSearch = async (submitBtn) => {
 
   const coords = await fetchCoordinates(searchInput.value);
   const { data } = await fetchTrails(coords.lat, coords.lon);
-
-  console.log(data);
+  const formattedData = []
+  
+  for(let item of data) {
+    item.description = item.description.replace(/(<([^>]+)>)/ig, '')
+    formattedData.push(item)
+  }
 
   if (!data.length) {
     console.log(data, 'no data');
   }
 
-  renderTrailResults(data, searchInput.value);
+  renderTrailResults(formattedData, searchInput.value);
 };
 
 const fetchCoordinates = async (address) => {

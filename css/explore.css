@@ -60,6 +60,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 28px;
+  overflow: hidden;
 }
 
 .trail-card-item {
@@ -82,6 +83,7 @@
 
 .trail-card-item .details-container {
   margin-top: 8px;
+  overflow: hidden;
 }
 
 .trail-card-item .details-container .name {
@@ -108,7 +110,7 @@
 }
 
 .results-placeholder {
-  margin: 120px auto;
+  margin: 50px auto;
   display: flex;
   align-items: center;
 }
