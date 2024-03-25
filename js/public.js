@@ -1,40 +1,55 @@
 // SHARED JS UTILS/FUNCTIONS
 
-const handleSearch = async (submitBtn, renderTarget) => {
+const renderTrailResults = (data, inputValue) => {
+  const renderBlock = document.querySelector('#results-container');
+  const searchedTermDisplay = document.querySelector('#searched-term-display');
+
+  if (!data.length) {
+    renderBlock.innerHTML = `
+      <span class="no-results-text">No results found for ${inputValue}</span>
+    `;
+  } else {
+    renderBlock.innerHTML = '';
+
+    for (let i = 0; i < data.length; i++) {
+      renderBlock.innerHTML += `
+      <div class="trail-card-item">
+        <div class="thumbnail-container">
+          <img src="${
+            data[i].thumbnail
+              ? data[i].thumbnail
+              : './images/trail-thumbnail-placeholder.jpg'
+          }" alt="">
+        </div>
+        <div class="details-container">
+          <span class="location">${data[i].city}, ${data[i].country}</span>
+          <h3 class="name">${data[i].name}</h3>
+          <p class="description">${data[i].description}</p>
+          <span class="difficulty">${
+            data[i].difficulty ? data[i].difficulty : 'Unknown'
+          }</span>
+        </div>
+      </div>
+      `;
+    }
+  }
+
+  searchedTermDisplay.textContent = `Results for '${inputValue}'`;
+};
+
+const handleSearch = async (submitBtn) => {
   const searchInput = document.querySelector(`#${submitBtn}`);
 
   const coords = await fetchCoordinates(searchInput.value);
   const { data } = await fetchTrails(coords.lat, coords.lon);
 
-  if (!renderTarget) {
-    console.log(data);
-    return;
+  console.log(data);
+
+  if (!data.length) {
+    console.log(data, 'no data');
   }
 
-  const renderBlock = document.querySelector(`#${renderTarget}`);
-  renderBlock.innerHTML = '';
-
-  for (let i = 0; i < data.length; i++) {
-    renderBlock.innerHTML += `
-    <div class="trail-card-item">
-      <div class="thumbnail-container">
-        <img src="${
-          data[i].thumbnail
-            ? data[i].thumbnail
-            : './images/trail-thumbnail-placeholder.jpg'
-        }" alt="">
-      </div>
-      <div class="details-container">
-        <span class="location">${data[i].city}, ${data[i].country}</span>
-        <h3 class="name">${data[i].name}</h3>
-        <p class="description">${data[i].description}</p>
-        <span class="difficulty">${
-          data[i].difficulty ? data[i].difficulty : 'Unknown'
-        }</span>
-      </div>
-    </div>
-    `;
-  }
+  renderTrailResults(data, searchInput.value);
 };
 
 const fetchCoordinates = async (address) => {

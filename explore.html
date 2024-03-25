@@ -69,18 +69,37 @@
       <div class="form-container">
         <h2 class="heading">Discover Trails</h2>
         <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quibusdam dolor eligendi dolorum.</p>
-        <input type="text" class="search-field" id="search-field" placeholder="enter location.."/>
+        <input type="text" class="search-field" id="search-field" placeholder="enter location.." autocomplete="off"/>
         <button class="submit-btn" onclick="handleSearch('search-field', 'results-container')">Search</button>
       </div>
     </section>
 
     <section class="trail-results-section">
       <div class="container">
-        <h2>Results for 'Cannock'</h2>
+        <h2 class="searched-term-display" id="searched-term-display"></h2>
         <div class="results-container" id="results-container">
-          
+          <div class="results-placeholder">
+            <div class="text-container">
+              <h3 class="heading">Nothing here just yet..</h3>
+              <p class="text">Find bike trails by searching the location in the text field above</p>
+            </div>
+            <img src="./icons/brush.svg"/>
+          </div>
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="content-container">
+        <div class="left">
+          <img class="icon" src="./icons/icons8-facebook-100.png"/>
+          <img class="icon" src="./icons/icons8-twitter-100.png"/>
+          <img class="icon" src="./icons/icons8-github-90.png"/>
+        </div>
+        <div class="right">
+          <span class="copyright-text">Trail Peak © 2024 | All rights reserved</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

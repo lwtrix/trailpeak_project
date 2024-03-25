@@ -1,6 +1,6 @@
 .trail-search-section {
   width: 100%;
-  height: 320px;
+  height: 380px;
   background-color: rgba(0, 0, 0, 0.164);
   display: flex;
   align-items: center;
@@ -25,6 +25,12 @@
   display: block;
   font-size: 18px;
   margin-top: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.698);
+}
+
+.trail-search-section .form-container .search-field:focus {
+  border-color: black;
+  outline: 0;
 }
 
 .trail-search-section .form-container .submit-btn {
@@ -101,3 +107,23 @@
   border-radius: 4px;
 }
 
+.results-placeholder {
+  margin: 120px auto;
+  display: flex;
+  align-items: center;
+}
+
+.results-placeholder .text-container {
+  margin-right: 48px;
+  text-align: center;
+}
+
+.results-placeholder .text-container .heading {
+  font-size: 32px;
+  margin: 0;
+}
+
+.results-placeholder .text-container .text {
+  margin: 0;
+  margin-top: 18px;
+}
