@@ -22,12 +22,17 @@ const renderTrailResults = (data, inputValue) => {
           }" alt="">
         </div>
         <div class="details-container">
-          <span class="location">${data[i].city}, ${data[i].country}</span>
+        <div class="top-info">
+          <span class="location">
+            <img class="icon" src="./icons/icons8-location-24.png"/>
+            <span>${data[i].city}, ${data[i].country}</span>
+          </span>
+          <span class="difficulty ${
+            data[i].difficulty ? data[i].difficulty.toLowerCase() : 'unknown'
+          }">${data[i].difficulty ? data[i].difficulty : 'Unknown'}</span>
+        </div>
           <h3 class="name">${data[i].name}</h3>
           <p class="description">${data[i].description.toString()}</p>
-          <span class="difficulty">${
-            data[i].difficulty ? data[i].difficulty : 'Unknown'
-          }</span>
         </div>
       </div>
       `;
@@ -42,11 +47,11 @@ const handleSearch = async (submitBtn) => {
 
   const coords = await fetchCoordinates(searchInput.value);
   const { data } = await fetchTrails(coords.lat, coords.lon);
-  const formattedData = []
-  
-  for(let item of data) {
-    item.description = item.description.replace(/(<([^>]+)>)/ig, '')
-    formattedData.push(item)
+  const formattedData = [];
+
+  for (let item of data) {
+    item.description = item.description.replace(/(<([^>]+)>)/gi, '');
+    formattedData.push(item);
   }
 
   if (!data.length) {
