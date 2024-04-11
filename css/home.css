@@ -3,12 +3,14 @@
 .carousel-container {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 86vh;
 }
 
 .carousel-text-container {
   position: absolute;
-  width: 100%;
+  width: 1280px;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -45,7 +47,7 @@
 }
 
 .carousel-container::after {
-  content: "";
+  content: '';
   background-color: #0000009a;
   width: 100%;
   height: 100%;
@@ -75,33 +77,152 @@
 
 /* TRAIL SEARCH FORM STYLES */
 
-.trail-search {
+.trail-search-section {
   width: 100%;
-  height: 420px;
+  height: 580px;
   display: flex;
   align-items: center;
+  background-color: #f9f9f9;
 }
 
-.trail-search .form-container {
+.trail-search-section .form-container {
   width: 1280px;
   margin: 0 auto;
 }
 
-.trail-search .form-container .form-title {
+.trail-search-section .form-container .form-title {
   font-size: 68px;
   margin: 0;
-
 }
 
-.trail-search .form-container .text {
+.trail-search-section .form-container .text {
   font-size: 20px;
   margin: 0;
   margin-top: 12px;
-  margin-bottom: 42px;
+  margin-bottom: 24px;
 }
 
-.trail-search .form-container .search-field {
+.trail-search-section .form-container .search-field {
   width: 340px;
   padding: 12px 42px;
-  font-size: 20px;
+  font-size: 18px;
+  width: 35%;
+  outline: 0;
+  border: 3px solid rgba(0, 0, 0, 0.698);
+  color: black;
+}
+
+.trail-search-section .form-container .submit-btn {
+  margin-top: 18px;
+  padding: 14px 38px;
+  width: 17.5%;
+  outline: 0;
+  cursor: pointer;
+  background-color: #000000;
+  color: white;
+  font-size: 18px;
+  border: none;
+  display: block;
+}
+
+/* CARDS STYLES */
+
+.cards-section {
+  width: 1280px;
+  margin: 0 auto;
+  height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cards-section .heading {
+  font-size: 42px;
+  text-align: center;
+}
+
+.cards-section .cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 140px;
+}
+
+.cards-section .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 28%;
+  padding: 38px 24px;
+  background-color: #f9f9f9;
+  border-radius: 24px;
+  border: 2px solid black;
+  transition: .1s ease-in;
+  cursor: pointer;
+}
+
+.cards-section .card:hover {
+  transform: translateY(-5%) scale(103%);
+  box-shadow: 0 5px 0px black;
+}
+
+.cards-section .card .title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards-section .card .title-container img {
+  width: 92px;
+}
+
+.cards-section .card .title-container .title {
+  margin-top: 42px;
+  margin-bottom: 12px;
+  font-size: 24px;
+  color: black;
+  padding: 0 8px;
+  font-weight: 500;
+}
+
+
+/* NEWSLETTER FORM STYLES */
+
+.newsletter-section {
+  background-color: #f9f9f9;
+}
+
+.newsletter-section .newsletter-container {
+  width: 1280px;
+  margin: 0 auto;
+  height: 980px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter-section .heading {
+  font-size: 52px;
+  padding-top: 30px;
+  width: fit-content;
+}
+
+.newsletter-section .text {
+  max-width: 55%;
+  margin-top: 12px;
+  margin-bottom: 38px;
+  font-size: 18px;
+}
+
+.newsletter-section .form-container .submit-btn{
+  padding: 12px 64px;
+  margin-top: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+
+.newsletter-section .form-container .submit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.876);
 }

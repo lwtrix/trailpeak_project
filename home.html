@@ -1,114 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@100;300;400;500;600;700&family=Oswald:wght@200..700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>TrailPeak</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/home.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Akshar:wght@100;300;400;500;600;700&family=Oswald:wght@200..700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-  <title>TrailPeak</title>
-  <link rel="stylesheet" href="./css/main.css" />
-  <link rel="stylesheet" href="./css/home.css" />
+    <script defer src="./js//carousel.js"></script>
+  </head>
 
-  <script defer src="./js//carousel.js"></script>
-</head>
+  <body>
+    <div class="navigation-container">
+      <nav>
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="./images/trailpeaklogo.png" alt="Trail Peak Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <li class="nav-link">
+            <a href="./home.html">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="./explore.html">Explore</a>
+          </li>
+          <li class="nav-link dropdown-link">
+            <div class="dropdown-link-container">
+              <span>More</span>
+              <svg
+                class="arrow-icon"
+                width="20px"
+                height="20px"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="#fff"
+                  d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"
+                />
+              </svg>
+            </div>
+            <div class="dropdown-container">
+              <ul class="dropdown-links">
+                <li class="nav-link">
+                  <a href="#">Safety</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#">Etiquette</a>
+                </li>
+                <li class="nav-link">
+                  <a href="#">About Us</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </div>
+      </nav>
+    </div>
 
-<body>
-
-  <div class="navigation-container">
-    <nav>
-      <div class="logo-container">
-        <a href="home.html">
-          <img src="./images/trailpeaklogo.png" alt="Trail Peak Logo" />
-        </a>
-      </div>
-      <div class="nav-links">
-        <li class="nav-link">
-          <a href="./home.html">Home</a>
-        </li>
-        <li class="nav-link">
-          <a href="./explore.html">Explore</a>
-        </li>
-        <li class="nav-link dropdown-link">
-          <div class="dropdown-link-container">
-            <span>More</span>
-            <svg class="arrow-icon" width="20px" height="20px" viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill="#fff"
-                d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z" />
-            </svg>
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-text-container">
+          <div class="content-container">
+            <h1 class="title">Explore Beyond</h1>
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Distinctio ipsum quas reprehenderit quidem voluptates voluptatem
+              quaerat a eius cumque nihil itaque repellendus nisi.
+            </p>
+            <button class="btn">Read More</button>
           </div>
-          <div class="dropdown-container">
-            <ul class="dropdown-links">
-              <li class="nav-link">
-                <a href="#">Safety</a>
-              </li>
-              <li class="nav-link">
-                <a href="#">Etiquette</a>
-              </li>
-              <li class="nav-link">
-                <a href="#">About Us</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <div>
-    </nav>
-  </div>
+        </div>
 
-  <section class="carousel">
-
-    <div class="carousel-container">
-      <div class="carousel-text-container">
-        <div class="content-container">
-          <h1 class="title">Explore Beyond</h1>
-          <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ipsum quas reprehenderit
-            quidem voluptates voluptatem quaerat a eius cumque nihil itaque repellendus nisi. </p>
-          <button class="btn">Read More</button>
+        <div class="carousel-slide" data-active>
+          <img src="./images/carousel-1.jpg" alt="MTB Image 1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="./images/carousel-2.jpg" alt="MTB Image 1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="./images/carousel-3.jpg" alt="MTB Image 1" />
+        </div>
+        <div class="carousel-slide">
+          <img src="./images/carousel-4.jpg" alt="MTB Image 1" />
         </div>
       </div>
+    </section>
 
-      <div class="carousel-slide" data-active>
-        <img src="./images/carousel-1.jpg" alt="MTB Image 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="./images/carousel-2.jpg" alt="MTB Image 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="./images/carousel-3.jpg" alt="MTB Image 1">
-      </div>
-      <div class="carousel-slide">
-        <img src="./images/carousel-4.jpg" alt="MTB Image 1">
-      </div>
-    </div>
-  </section>
+    <section class="cards-section">
+      <h2 class="heading">Read more about...</h2>
 
-  <section class="trail-search">
-    <div class="form-container">
-      <h2 class="form-title">Discover Trails</h2>
-      <p class="text">Search trails in your local area</p>
-      <input type="text" id="search-field" class="search-field" placeholder="enter a city, state.." />
-      <button onclick="handleSearch()">Search</button>
-    </div>
-  </section>
-
-  <footer>
-    <div class="content-container">
-      <div class="left">
-        <img class="icon" src="./icons/icons8-facebook-100.png"/>
-        <img class="icon" src="./icons/icons8-twitter-100.png"/>
-        <img class="icon" src="./icons/icons8-github-90.png"/>
+      <div class="cards-container">
+        <div class="card">
+          <div class="title-container">
+            <img src="./icons/icons8-safety-100.png" />
+            <h3 class="title">Safety</h3>
+          </div>
+          <p class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo autem,
+            provident distinctio, neque ea velit cum tenetur enim eligendi natus
+          </p>
+        </div>
+        <div class="card">
+          <div class="title-container">
+            <img src="./icons/icons8-medal-96.png" />
+            <h3 class="title">Biker's Etiquette</h3>
+          </div>
+          <p class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo autem,
+            provident distinctio, neque ea velit cum tenetur enim eligendi natus
+          </p>
+        </div>
+        <div class="card">
+          <div class="title-container">
+            <img src="./icons/icons8-mission-100.png" />
+            <h3 class="title">Our Mission</h3>
+          </div>
+          <p class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo autem,
+            provident distinctio, neque ea velit cum tenetur enim eligendi natus
+          </p>
+        </div>
       </div>
-      <div class="right">
-        <span class="copyright-text">Trail Peak © 2024 | All rights reserved</span>
-      </div>
-    </div>
-  </footer>
-  
-</body>
+    </section>
 
+    <section class="newsletter-section">
+      <div class="newsletter-container">
+        <h2 class="heading">Subscribe to our newsletter</h2>
+        <p class="text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
+          recusandae libero in vitae enim culpa illum consequatur! Delectus
+          provident odit repudiandae tenetur animi? Cumque magnam, hic esse
+          officia facere deserunt!
+        </p>
+        <form class="form-container">
+          <input type="text" placeholder="E-mail" class="email-field" />
+          <button class="submit-btn">Submit</button>
+        </form>
+      </div>
+      
+    </section>
+
+    <footer>
+      <div class="content-container">
+        <div class="left">
+          <img class="icon" src="./icons/icons8-facebook-100.png" />
+          <img class="icon" src="./icons/icons8-twitter-100.png" />
+          <img class="icon" src="./icons/icons8-github-90.png" />
+        </div>
+        <div class="right">
+          <span class="copyright-text"
+            >Trail Peak © 2024 | All rights reserved</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
