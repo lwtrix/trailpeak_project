@@ -9,9 +9,8 @@
 .carousel-text-container {
   position: absolute;
   width: 1280px;
-  left: 50%;
-  transform: translateX(-50%);
   height: 100%;
+  left: 5%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,12 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trail Peak</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trail Peak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@100;300;400;500;600;700&family=Oswald:wght@200..700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+  </head>
+  <body>
+    <div class="navigation-container">
+      <nav>
+        <div class="logo-container">
+          <a href="home.html">
+            <img src="./images/trailpeaklogo.png" alt="Trail Peak Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <li class="nav-link">
+            <a href="./home.html">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="./explore.html">Explore</a>
+          </li>
+          <li class="nav-link dropdown-link">
+            <div class="dropdown-link-container">
+              <span>More</span>
+              <svg
+                class="arrow-icon"
+                width="20px"
+                height="20px"
+                viewBox="0 0 1024 1024"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="#fff"
+                  d="M831.872 340.864 512 652.672 192.128 340.864a30.592 30.592 0 0 0-42.752 0 29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728 30.592 30.592 0 0 0-42.752 0z"
+                />
+              </svg>
+            </div>
+            <div class="dropdown-container">
+              <ul class="dropdown-links">
+                <li class="nav-link">
+                  <a href="./safety.html">Safety</a>
+                </li>
+                <li class="nav-link">
+                  <a href="etiquette.html">Etiquette</a>
+                </li>
+                <li class="nav-link">
+                  <a href="about.html">About Us</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </div>
+      </nav>
+    </div>
+
+    <main>
+      <div class="showcase-container">
+        <img src="./images/carousel-4.jpg" alt="MTB Image" class="img" />
+        <div class="text-container">
+          <h1>About Us</h1>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="banner"><h2>How We Started</h2></div>
+        <div class="text-container">
+          <p class="paragraph">
+            Trail Peak was born out of a shared passion for mountain biking and
+            a desire to create a central hub for riders to connect, learn, and
+            explore. It all began with a group of avid riders who, fueled by
+            their love for the sport, embarked on countless adventures across
+            rugged terrains, from winding single tracks to challenging descents.
+            Along the way, we encountered fellow riders who shared our
+            enthusiasm and camaraderie, and we realized the transformative power
+            of mountain biking in uniting people from diverse backgrounds and
+            experiences.
+          </p>
+          <p class="paragraph">
+            Inspired by our own journey and the sense of community we found on
+            the trails, we set out to create a platform that celebrates the
+            beauty and thrill of mountain biking while promoting responsible
+            trail stewardship and fostering a sense of belonging among riders.
+            What started as a passion project has evolved into a comprehensive
+            resource for mountain biking enthusiasts, offering trail guides,
+            gear reviews, safety tips, and a vibrant online community where
+            riders can share their experiences and forge lasting connections. As
+            we continue to grow and evolve, our commitment to empowering riders
+            and enriching their biking experiences remains unwavering.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="banner"><h2>Our Mission</h2></div>
+        <div class="text-container">
+          <p class="paragraph">
+            At Trail Peak, our mission is to ignite the spirit of adventure and
+            exploration in every mountain biking enthusiast. We are passionate
+            about connecting riders with the exhilarating experience of
+            conquering rugged trails, breathing in the crisp mountain air, and
+            soaking in the breathtaking vistas that nature offers. Our
+            commitment extends beyond mere biking; we strive to foster a vibrant
+            community where riders of all skill levels can come together to
+            share their passion, exchange tips and tricks, and inspire one
+            another to push their limits.
+          </p>
+          <p class="paragraph">
+            Central to our mission is the belief that mountain biking is not
+            just a sport but a way of life—a gateway to self-discovery, personal
+            growth, and camaraderie. We are dedicated to providing riders with
+            the resources they need to embark on unforgettable biking
+            adventures, from trail guides and gear recommendations to safety
+            tips and inspirational stories from fellow riders. By promoting
+            responsible trail use, environmental stewardship, and inclusivity,
+            we aim to create a welcoming and supportive environment where every
+            rider feels empowered to embrace the challenges and rewards of
+            mountain biking.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="content-container">
+        <div class="left">
+          <img class="icon" src="./icons/icons8-facebook-100.png" />
+          <img class="icon" src="./icons/icons8-twitter-100.png" />
+          <a href="https://github.com/lwtrix/trailpeak_project">
+            <img class="icon" src="./icons/icons8-github-90.png" />
+          </a>
+        </div>
+        <div class="right">
+          <span class="copyright-text"
+            >Trail Peak © 2024 | All rights reserved</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
